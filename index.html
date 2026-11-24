@@ -11,6 +11,40 @@
 </head>
 <body>
   <div class="page-wrapper">
+    <!-- Sticky Site Header -->
+    <header class="site-header" id="siteHeader">
+      <div class="header-inner">
+        <div class="header-left">
+          <a href="#hero" class="brand-logo" aria-label="MERACH Home">
+            <img src="./assets/logo.svg" alt="MERACH" width="106.333" height="22" class="brand-logo-img" />
+          </a>
+          <nav class="main-nav" aria-label="Primary Navigation">
+            <a href="#category-bar" class="nav-link">Shop by equipment</a>
+            <a href="#training-goals" class="nav-link">Shop by goal</a>
+            <a href="#smart-connectivity" class="nav-link">App</a>
+            <a href="#support" class="nav-link">Support</a>
+          </nav>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="icon-btn header-action-btn" id="openSearchBtn" aria-label="Search">
+            <img src="./assets/icon-search.svg" alt="" width="28" height="28" class="icon-desktop" />
+            <img src="./assets/icon-search-mobile.svg" alt="" width="44" height="44" class="icon-mobile" />
+          </button>
+          <button type="button" class="icon-btn header-action-btn" id="openCartBtn" aria-label="Shopping Cart">
+            <img src="./assets/icon-cart.svg" alt="" width="28" height="28" class="icon-desktop" />
+            <img src="./assets/icon-cart-mobile.svg" alt="" width="44" height="44" class="icon-mobile" />
+          </button>
+          <button type="button" class="icon-btn header-action-btn" id="openAccountBtn" aria-label="Account">
+            <img src="./assets/icon-account.svg" alt="" width="28" height="28" class="icon-desktop" />
+            <img src="./assets/icon-account-mobile.svg" alt="" width="44" height="44" class="icon-mobile" />
+          </button>
+          <button type="button" class="icon-btn header-action-btn mobile-menu-btn" id="openMobileMenuBtn" aria-label="Open menu" aria-expanded="false">
+            <img src="./assets/icon-menu-mobile.svg" alt="" width="44" height="44" class="icon-mobile" />
+          </button>
+        </div>
+      </div>
+    </header>
+
     <!-- ==================== 01 HERO & NAVIGATION ==================== -->
     <section class="section-hero" id="hero" aria-label="Hero Showcase">
       <div class="hero-bg-layer" aria-hidden="true">
@@ -30,39 +64,7 @@
         <div class="hero-overlay-mobile-bottom"></div>
       </div>
 
-      <!-- Header Navigation -->
-      <header class="site-header" id="siteHeader">
-        <div class="header-inner">
-          <div class="header-left">
-            <a href="#hero" class="brand-logo" aria-label="MERACH Home">
-              <img src="./assets/logo.svg" alt="MERACH" width="106.333" height="22" class="brand-logo-img" />
-            </a>
-            <nav class="main-nav" aria-label="Primary Navigation">
-              <a href="#category-bar" class="nav-link">Shop by equipment</a>
-              <a href="#training-goals" class="nav-link">Shop by goal</a>
-              <a href="#smart-connectivity" class="nav-link">App</a>
-              <a href="#support" class="nav-link">Support</a>
-            </nav>
-          </div>
-          <div class="header-actions">
-            <button type="button" class="icon-btn header-action-btn" id="openSearchBtn" aria-label="Search">
-              <img src="./assets/icon-search.svg" alt="" width="28" height="28" class="icon-desktop" />
-              <img src="./assets/icon-search-mobile.svg" alt="" width="44" height="44" class="icon-mobile" />
-            </button>
-            <button type="button" class="icon-btn header-action-btn" id="openCartBtn" aria-label="Shopping Cart">
-              <img src="./assets/icon-cart.svg" alt="" width="28" height="28" class="icon-desktop" />
-              <img src="./assets/icon-cart-mobile.svg" alt="" width="44" height="44" class="icon-mobile" />
-            </button>
-            <button type="button" class="icon-btn header-action-btn" id="openAccountBtn" aria-label="Account">
-              <img src="./assets/icon-account.svg" alt="" width="28" height="28" class="icon-desktop" />
-              <img src="./assets/icon-account-mobile.svg" alt="" width="44" height="44" class="icon-mobile" />
-            </button>
-            <button type="button" class="icon-btn header-action-btn mobile-menu-btn" id="openMobileMenuBtn" aria-label="Open menu" aria-expanded="false">
-              <img src="./assets/icon-menu-mobile.svg" alt="" width="44" height="44" class="icon-mobile" />
-            </button>
-          </div>
-        </div>
-      </header>
+      <div class="hero-header-spacer" aria-hidden="true"></div>
 
       <!-- Hero Content -->
       <div class="hero-content-wrap">
@@ -135,6 +137,7 @@
           <!-- Card 1: Treadmills -->
           <a href="#training-goals" class="category-card" data-category-group="equipment">
             <div class="category-media">
+              <img src="./assets/cat-lifestyle-treadmills.jpg" alt="Treadmills" class="category-lifestyle-img" />
               <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
               <div class="category-img-frame frame-treadmills">
                 <img src="./assets/cat-treadmills.png" alt="Treadmills" class="crop-treadmills" />
@@ -151,6 +154,7 @@
           <!-- Card 2: Walking Pad -->
           <a href="#training-goals" class="category-card" data-category-group="equipment">
             <div class="category-media">
+              <img src="./assets/cat-lifestyle-walkingpad.jpg" alt="Walking Pad" class="category-lifestyle-img" />
               <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
               <div class="category-img-frame frame-walkingpad">
                 <img src="./assets/cat-walkingpad.png" alt="Walking Pad" class="crop-walkingpad" />
@@ -167,6 +171,7 @@
           <!-- Card 3: Rowers -->
           <a href="#training-goals" class="category-card" data-category-group="equipment">
             <div class="category-media">
+              <img src="./assets/cat-lifestyle-rowers.jpg" alt="Rowers" class="category-lifestyle-img" />
               <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
               <div class="category-img-frame frame-rowers">
                 <img src="./assets/cat-rowers.png" alt="Rowers" class="crop-rowers" />
@@ -183,6 +188,7 @@
           <!-- Card 4: Bikes -->
           <a href="#training-goals" class="category-card" data-category-group="equipment">
             <div class="category-media">
+              <img src="./assets/cat-lifestyle-bikes.jpg" alt="Bikes" class="category-lifestyle-img" />
               <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
               <div class="category-img-frame frame-bikes">
                 <img src="./assets/cat-bikes.png" alt="Bikes" class="crop-bikes" />
@@ -199,6 +205,7 @@
           <!-- Card 5: Essential -->
           <a href="#training-goals" class="category-card" data-category-group="equipment">
             <div class="category-media">
+              <img src="./assets/cat-lifestyle-essential.jpg" alt="Essential" class="category-lifestyle-img" />
               <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
               <div class="category-img-frame frame-essential">
                 <img src="./assets/cat-essential.png" alt="Essential" class="crop-essential" />
@@ -541,62 +548,107 @@
       <div class="container awards-desktop-wrap">
         <div class="awards-marquee">
           <div class="awards-track">
-            <!-- 7 items matching exact Figma initial visual alignment (centered around IDEA Award with Red Dot / Good Design flanking) -->
-            <div class="award-item">
-              <div class="award-icon-box">
-                <div class="award-idea-frame">
-                  <img src="./assets/award-idea.png" alt="IDEA Award" class="crop-award-idea" />
+            <!-- Group 1 (6 items = 2 full cycles) -->
+            <div class="awards-group">
+              <div class="award-item">
+                <div class="award-icon-box">
+                  <div class="award-reddot-frame">
+                    <img src="./assets/award-reddot.png" alt="Red Dot Design Award" class="crop-award-reddot" />
+                  </div>
                 </div>
+                <p class="award-title">Red Dot Design Award</p>
               </div>
-              <p class="award-title">IDEA Award</p>
+              <div class="award-item">
+                <div class="award-icon-box">
+                  <div class="award-gooddesign-frame">
+                    <img src="./assets/award-gooddesign.svg" alt="Good Design Award" width="80.0206" height="80" />
+                  </div>
+                </div>
+                <p class="award-title">Good Design Award</p>
+              </div>
+              <div class="award-item">
+                <div class="award-icon-box">
+                  <div class="award-idea-frame">
+                    <img src="./assets/award-idea.png" alt="IDEA Award" class="crop-award-idea" />
+                  </div>
+                </div>
+                <p class="award-title">IDEA Award</p>
+              </div>
+              <div class="award-item">
+                <div class="award-icon-box">
+                  <div class="award-reddot-frame">
+                    <img src="./assets/award-reddot.png" alt="Red Dot Design Award" class="crop-award-reddot" />
+                  </div>
+                </div>
+                <p class="award-title">Red Dot Design Award</p>
+              </div>
+              <div class="award-item">
+                <div class="award-icon-box">
+                  <div class="award-gooddesign-frame">
+                    <img src="./assets/award-gooddesign.svg" alt="Good Design Award" width="80.0206" height="80" />
+                  </div>
+                </div>
+                <p class="award-title">Good Design Award</p>
+              </div>
+              <div class="award-item">
+                <div class="award-icon-box">
+                  <div class="award-idea-frame">
+                    <img src="./assets/award-idea.png" alt="IDEA Award" class="crop-award-idea" />
+                  </div>
+                </div>
+                <p class="award-title">IDEA Award</p>
+              </div>
             </div>
-            <div class="award-item">
-              <div class="award-icon-box">
-                <div class="award-reddot-frame">
-                  <img src="./assets/award-reddot.png" alt="Red Dot Design Award" class="crop-award-reddot" />
+            <!-- Group 2 (seamless duplicate for infinite right-to-left loop) -->
+            <div class="awards-group" aria-hidden="true">
+              <div class="award-item">
+                <div class="award-icon-box">
+                  <div class="award-reddot-frame">
+                    <img src="./assets/award-reddot.png" alt="" class="crop-award-reddot" />
+                  </div>
                 </div>
+                <p class="award-title">Red Dot Design Award</p>
               </div>
-              <p class="award-title">Red Dot Design Award</p>
-            </div>
-            <div class="award-item">
-              <div class="award-icon-box">
-                <div class="award-gooddesign-frame">
-                  <img src="./assets/award-gooddesign.svg" alt="Good Design Award" width="80.0206" height="80" />
+              <div class="award-item">
+                <div class="award-icon-box">
+                  <div class="award-gooddesign-frame">
+                    <img src="./assets/award-gooddesign.svg" alt="" width="80.0206" height="80" />
+                  </div>
                 </div>
+                <p class="award-title">Good Design Award</p>
               </div>
-              <p class="award-title">Good Design Award</p>
-            </div>
-            <div class="award-item">
-              <div class="award-icon-box">
-                <div class="award-idea-frame">
-                  <img src="./assets/award-idea.png" alt="IDEA Award" class="crop-award-idea" />
+              <div class="award-item">
+                <div class="award-icon-box">
+                  <div class="award-idea-frame">
+                    <img src="./assets/award-idea.png" alt="" class="crop-award-idea" />
+                  </div>
                 </div>
+                <p class="award-title">IDEA Award</p>
               </div>
-              <p class="award-title">IDEA Award</p>
-            </div>
-            <div class="award-item">
-              <div class="award-icon-box">
-                <div class="award-reddot-frame">
-                  <img src="./assets/award-reddot.png" alt="Red Dot Design Award" class="crop-award-reddot" />
+              <div class="award-item">
+                <div class="award-icon-box">
+                  <div class="award-reddot-frame">
+                    <img src="./assets/award-reddot.png" alt="" class="crop-award-reddot" />
+                  </div>
                 </div>
+                <p class="award-title">Red Dot Design Award</p>
               </div>
-              <p class="award-title">Red Dot Design Award</p>
-            </div>
-            <div class="award-item">
-              <div class="award-icon-box">
-                <div class="award-gooddesign-frame">
-                  <img src="./assets/award-gooddesign.svg" alt="Good Design Award" width="80.0206" height="80" />
+              <div class="award-item">
+                <div class="award-icon-box">
+                  <div class="award-gooddesign-frame">
+                    <img src="./assets/award-gooddesign.svg" alt="" width="80.0206" height="80" />
+                  </div>
                 </div>
+                <p class="award-title">Good Design Award</p>
               </div>
-              <p class="award-title">Good Design Award</p>
-            </div>
-            <div class="award-item">
-              <div class="award-icon-box">
-                <div class="award-idea-frame">
-                  <img src="./assets/award-idea.png" alt="IDEA Award" class="crop-award-idea" />
+              <div class="award-item">
+                <div class="award-icon-box">
+                  <div class="award-idea-frame">
+                    <img src="./assets/award-idea.png" alt="" class="crop-award-idea" />
+                  </div>
                 </div>
+                <p class="award-title">IDEA Award</p>
               </div>
-              <p class="award-title">IDEA Award</p>
             </div>
           </div>
           <div class="awards-fade-left" aria-hidden="true"></div>

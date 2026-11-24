@@ -57,8 +57,16 @@
   });
 
   /* ------------------------------------------------------------------------
-     2. Header Actions (Search, Cart, Account, Mobile Drawer)
+     2. Sticky Header (White Background + Black Text on Scroll) & Actions
      ------------------------------------------------------------------------ */
+  const siteHeader = document.getElementById("siteHeader");
+  function syncHeaderScrollState() {
+    if (!siteHeader) return;
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 20);
+  }
+  window.addEventListener("scroll", syncHeaderScrollState, { passive: true });
+  syncHeaderScrollState();
+
   const openSearchBtn = document.getElementById("openSearchBtn");
   const openCartBtn = document.getElementById("openCartBtn");
   const openAccountBtn = document.getElementById("openAccountBtn");
@@ -257,6 +265,7 @@
   function renderCategoryTab(tabName) {
     const grid = document.getElementById("categoryGrid");
     if (!grid) return;
+    grid.setAttribute("data-active-tab", tabName);
     const items = tabName === "goal" ? categoryCardsGoal : categoryCardsEquipment;
     const titles = grid.querySelectorAll(".category-card-title");
     titles.forEach((el, i) => {
