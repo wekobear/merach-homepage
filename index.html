@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles.css?v=11" />
 </head>
 <body>
   <div class="page-wrapper">
@@ -27,19 +27,19 @@
         </div>
         <div class="header-actions">
           <button type="button" class="icon-btn header-action-btn" id="openSearchBtn" aria-label="Search">
-            <img src="./assets/icon-search.svg" alt="" width="28" height="28" class="icon-desktop" />
-            <img src="./assets/icon-search-mobile.svg" alt="" width="44" height="44" class="icon-mobile" />
-          </button>
-          <button type="button" class="icon-btn header-action-btn" id="openCartBtn" aria-label="Shopping Cart">
-            <img src="./assets/icon-cart.svg" alt="" width="28" height="28" class="icon-desktop" />
-            <img src="./assets/icon-cart-mobile.svg" alt="" width="44" height="44" class="icon-mobile" />
+            <img src="./assets/icon-new-search.svg" alt="" width="24" height="24" class="header-icon-svg header-icon-dark-src" />
           </button>
           <button type="button" class="icon-btn header-action-btn" id="openAccountBtn" aria-label="Account">
-            <img src="./assets/icon-account.svg" alt="" width="28" height="28" class="icon-desktop" />
-            <img src="./assets/icon-account-mobile.svg" alt="" width="44" height="44" class="icon-mobile" />
+            <img src="./assets/icon-new-account.svg" alt="" width="24" height="24" class="header-icon-svg header-icon-dark-src" />
+          </button>
+          <button type="button" class="icon-btn header-action-btn header-cart-btn" id="openCartBtn" aria-label="Shopping Cart">
+            <span class="header-cart-icon-wrap">
+              <img src="./assets/icon-new-cart.svg" alt="" width="22" height="22" class="header-icon-svg header-icon-dark-src" />
+              <span class="header-cart-badge" id="headerCartBadge" hidden>0</span>
+            </span>
           </button>
           <button type="button" class="icon-btn header-action-btn mobile-menu-btn" id="openMobileMenuBtn" aria-label="Open menu" aria-expanded="false">
-            <img src="./assets/icon-menu-mobile.svg" alt="" width="44" height="44" class="icon-mobile" />
+            <img src="./assets/icon-new-menu.svg" alt="" width="44" height="44" class="header-menu-svg" />
           </button>
         </div>
       </div>
@@ -95,7 +95,7 @@
       <!-- Hero Carousel Progress Indicators -->
       <div class="hero-indicators" id="heroIndicators" role="tablist" aria-label="Hero slides">
         <button type="button" class="hero-indicator is-active" data-slide="0" role="tab" aria-selected="true" aria-label="Slide 1">
-          <span class="hero-indicator-fill" style="width: 62.18%;"></span>
+          <span class="hero-indicator-fill"></span>
         </button>
         <button type="button" class="hero-indicator" data-slide="1" role="tab" aria-selected="false" aria-label="Slide 2">
           <span class="hero-indicator-fill"></span>
@@ -138,9 +138,11 @@
           <a href="#training-goals" class="category-card" data-category-group="equipment">
             <div class="category-media">
               <img src="./assets/cat-lifestyle-treadmills.jpg" alt="Treadmills" class="category-lifestyle-img" />
-              <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
-              <div class="category-img-frame frame-treadmills">
-                <img src="./assets/cat-treadmills.png" alt="Treadmills" class="crop-treadmills" />
+              <div class="category-cutout-stage">
+                <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
+                <div class="category-img-frame frame-treadmills">
+                  <img src="./assets/cat-treadmills.png" alt="Treadmills" class="crop-treadmills" />
+                </div>
               </div>
             </div>
             <div class="category-card-footer">
@@ -155,9 +157,11 @@
           <a href="#training-goals" class="category-card" data-category-group="equipment">
             <div class="category-media">
               <img src="./assets/cat-lifestyle-walkingpad.jpg" alt="Walking Pad" class="category-lifestyle-img" />
-              <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
-              <div class="category-img-frame frame-walkingpad">
-                <img src="./assets/cat-walkingpad.png" alt="Walking Pad" class="crop-walkingpad" />
+              <div class="category-cutout-stage">
+                <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
+                <div class="category-img-frame frame-walkingpad">
+                  <img src="./assets/cat-walkingpad.png" alt="Walking Pad" class="crop-walkingpad" />
+                </div>
               </div>
             </div>
             <div class="category-card-footer">
@@ -172,9 +176,11 @@
           <a href="#training-goals" class="category-card" data-category-group="equipment">
             <div class="category-media">
               <img src="./assets/cat-lifestyle-rowers.jpg" alt="Rowers" class="category-lifestyle-img" />
-              <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
-              <div class="category-img-frame frame-rowers">
-                <img src="./assets/cat-rowers.png" alt="Rowers" class="crop-rowers" />
+              <div class="category-cutout-stage">
+                <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
+                <div class="category-img-frame frame-rowers">
+                  <img src="./assets/cat-rowers.png" alt="Rowers" class="crop-rowers" />
+                </div>
               </div>
             </div>
             <div class="category-card-footer">
@@ -189,9 +195,11 @@
           <a href="#training-goals" class="category-card" data-category-group="equipment">
             <div class="category-media">
               <img src="./assets/cat-lifestyle-bikes.jpg" alt="Bikes" class="category-lifestyle-img" />
-              <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
-              <div class="category-img-frame frame-bikes">
-                <img src="./assets/cat-bikes.png" alt="Bikes" class="crop-bikes" />
+              <div class="category-cutout-stage">
+                <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
+                <div class="category-img-frame frame-bikes">
+                  <img src="./assets/cat-bikes.png" alt="Bikes" class="crop-bikes" />
+                </div>
               </div>
             </div>
             <div class="category-card-footer">
@@ -206,9 +214,11 @@
           <a href="#training-goals" class="category-card" data-category-group="equipment">
             <div class="category-media">
               <img src="./assets/cat-lifestyle-essential.jpg" alt="Essential" class="category-lifestyle-img" />
-              <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
-              <div class="category-img-frame frame-essential">
-                <img src="./assets/cat-essential.png" alt="Essential" class="crop-essential" />
+              <div class="category-cutout-stage">
+                <img src="./assets/cat-ellipse-mobile.svg" alt="" width="32" height="32" class="category-ellipse-mobile" aria-hidden="true" />
+                <div class="category-img-frame frame-essential">
+                  <img src="./assets/cat-essential.png" alt="Essential" class="crop-essential" />
+                </div>
               </div>
             </div>
             <div class="category-card-footer">
@@ -223,19 +233,28 @@
     </section>
 
     <!-- ==================== 03 SYSTEM SHOWCASE ==================== -->
-    <section class="section-system" id="system-showcase" aria-labelledby="systemHeading">
+    <section class="section-system" id="system-showcase" aria-labelledby="systemHeading" data-showcase-variant="variant-c">
       <div class="container">
         <div class="section-header section-header-system">
-          <h2 class="section-title" id="systemHeading">
-            <span class="title-line-1">One System.</span><span class="title-space"> </span><span class="title-line-2">Room to Grow Stronger</span>
-          </h2>
+          <div class="system-heading-group">
+            <div class="variant-switcher" role="tablist" aria-label="Showcase style variants">
+              <button type="button" class="variant-chip is-active" data-variant="variant-c" role="tab" aria-selected="true">方案 C · 3D 交互展台</button>
+              <button type="button" class="variant-chip" data-variant="variant-a" role="tab" aria-selected="false">方案 A · 硬件热区透视</button>
+              <button type="button" class="variant-chip" data-variant="variant-b" role="tab" aria-selected="false">方案 B · 暗黑工程分屏</button>
+              <button type="button" class="variant-chip" data-variant="original" role="tab" aria-selected="false">原版 · 毛玻璃卡片</button>
+            </div>
+            <h2 class="section-title" id="systemHeading">
+              <span class="title-line-1">One System.</span><span class="title-space"> </span><span class="title-line-2">Room to Grow Stronger</span>
+            </h2>
+          </div>
           <a href="#training-goals" class="link-cyan">
             <span>Discover the P16</span>
             <img src="./assets/icon-right-cyan.svg" alt="" width="18" height="18" class="icon-right-cyan" />
           </a>
         </div>
 
-        <div class="system-banner">
+        <!-- Original Variant (Frosted Glass) -->
+        <div class="system-banner system-variant-panel" data-panel="original">
           <div class="system-banner-bg" aria-hidden="true">
             <picture>
               <source media="(max-width: 767px)" srcset="./assets/system-banner-mobile.png" />
@@ -311,6 +330,223 @@
                   <img src="./assets/icon-add-circle.svg" alt="" width="18" height="18" class="mobile-add-icon" />
                   <span>Gym-Grade Fluidity</span>
                 </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Variant A: Interactive Hardware Hotspots + Bottom Engineering Spec Bar -->
+        <div class="system-variant-a system-variant-panel" data-panel="variant-a" data-active-spot="0">
+          <div class="sva-stage">
+            <div class="sva-bg-wrap" id="svaBgWrap">
+              <img src="./assets/system-banner-pc.png" alt="MERACH P16 Strength System" class="sva-bg-img" />
+            </div>
+            <div class="sva-vignette" aria-hidden="true"></div>
+
+            <!-- Top-left Flagship Launch Badge -->
+            <div class="sva-launch-badge">
+              <span class="sva-pulse-dot" aria-hidden="true"></span>
+              <span class="sva-badge-text">New Launch · P16 Strength System</span>
+            </div>
+
+            <!-- Floating Spec Callout Card (synced to active hotspot) -->
+            <div class="sva-callout" id="svaCallout">
+              <div class="sva-callout-meta">
+                <span class="sva-callout-index" id="svaCalloutIndex">01 / 03</span>
+                <span class="sva-callout-metric" id="svaCalloutMetric">1,200 LB Load</span>
+              </div>
+              <h3 class="sva-callout-title" id="svaCalloutTitle">Rock-Solid Safety</h3>
+              <p class="sva-callout-desc" id="svaCalloutDesc">Heavy-duty 11-gauge commercial steel frame engineered as a permanent foundation for home strength training.</p>
+            </div>
+
+            <!-- 3 Interactive Hardware Hotspot Pins -->
+            <button type="button" class="sva-hotspot is-active" data-spot="0" style="left: 61%; top: 58%;" aria-label="01 Rock-Solid Safety">
+              <span class="sva-pin-ring"></span>
+              <span class="sva-pin-core">01</span>
+              <span class="sva-pin-label">11-Gauge Steel Frame</span>
+            </button>
+
+            <button type="button" class="sva-hotspot" data-spot="1" style="left: 47%; top: 55%;" aria-label="02 Natural Biomechanics">
+              <span class="sva-pin-ring"></span>
+              <span class="sva-pin-core">02</span>
+              <span class="sva-pin-label">180° Dual Cable Path</span>
+            </button>
+
+            <button type="button" class="sva-hotspot" data-spot="2" style="left: 59%; top: 29%;" aria-label="03 Gym-Grade Fluidity">
+              <span class="sva-pin-ring"></span>
+              <span class="sva-pin-core">03</span>
+              <span class="sva-pin-label">CNC Pulley System</span>
+            </button>
+
+            <!-- Bottom Docked Interactive Feature Bar -->
+            <div class="sva-bottom-bar" role="tablist" aria-label="P16 engineering highlights">
+              <button type="button" class="sva-tab is-active" data-spot="0" role="tab" aria-selected="true">
+                <span class="sva-tab-num">01</span>
+                <span class="sva-tab-copy">
+                  <span class="sva-tab-title">Rock-Solid Safety</span>
+                  <span class="sva-tab-spec">1,200 LB · 11-Gauge Steel</span>
+                </span>
+              </button>
+              <button type="button" class="sva-tab" data-spot="1" role="tab" aria-selected="false">
+                <span class="sva-tab-num">02</span>
+                <span class="sva-tab-copy">
+                  <span class="sva-tab-title">Natural Biomechanics</span>
+                  <span class="sva-tab-spec">180° Swivel · 2:1 / 1:1 Ratio</span>
+                </span>
+              </button>
+              <button type="button" class="sva-tab" data-spot="2" role="tab" aria-selected="false">
+                <span class="sva-tab-num">03</span>
+                <span class="sva-tab-copy">
+                  <span class="sva-tab-title">Gym-Grade Fluidity</span>
+                  <span class="sva-tab-spec">CNC Bearings · &lt;42 dB</span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Variant B: Split Dark Engineering Showcase (Zero Text-over-Image Clutter) -->
+        <div class="system-variant-b system-variant-panel" data-panel="variant-b" data-active-step="0">
+          <div class="svb-left">
+            <div class="svb-header">
+              <span class="svb-kicker">New Flagship · MERACH P16</span>
+              <h3 class="svb-headline">Built Like A Commercial Rack. Tuned For Home.</h3>
+            </div>
+
+            <div class="svb-accordion" role="tablist" aria-label="P16 core engineering">
+              <button type="button" class="svb-item is-active" data-step="0" role="tab" aria-selected="true">
+                <div class="svb-item-top">
+                  <span class="svb-item-num">01</span>
+                  <span class="svb-item-title">Rock-Solid Safety</span>
+                  <span class="svb-item-badge">1,200 LB</span>
+                </div>
+                <div class="svb-item-body">
+                  <p>Heavy-duty 11-gauge steel uprights with laser-cut numbering deliver unwavering stability under max loads.</p>
+                </div>
+              </button>
+
+              <button type="button" class="svb-item" data-step="1" role="tab" aria-selected="false">
+                <div class="svb-item-top">
+                  <span class="svb-item-num">02</span>
+                  <span class="svb-item-title">Natural Biomechanics</span>
+                  <span class="svb-item-badge">180° Arc</span>
+                </div>
+                <div class="svb-item-body">
+                  <p>Dual independent cable arms trace your natural joint path for safer, deeper muscle recruitment across 100+ movements.</p>
+                </div>
+              </button>
+
+              <button type="button" class="svb-item" data-step="2" role="tab" aria-selected="false">
+                <div class="svb-item-top">
+                  <span class="svb-item-num">03</span>
+                  <span class="svb-item-title">Gym-Grade Fluidity</span>
+                  <span class="svb-item-badge">&lt;42 dB</span>
+                </div>
+                <div class="svb-item-body">
+                  <p>Precision-machined CNC aluminum pulleys and sealed bearings ensure whisper-quiet, frictionless travel on every rep.</p>
+                </div>
+              </button>
+            </div>
+
+            <div class="svb-actions">
+              <a href="#training-goals" class="btn-pill btn-white">Explore P16 Specs</a>
+              <a href="#footer" class="btn-pill btn-outline-white">Reserve Early Access</a>
+            </div>
+          </div>
+
+          <div class="svb-right">
+            <div class="svb-media-wrap" id="svbMediaWrap">
+              <img src="./assets/system-banner-pc.png" alt="MERACH P16 Strength System in home studio" class="svb-media-img" />
+            </div>
+            <div class="svb-spec-chip" id="svbSpecChip">
+              <span class="svb-spec-label" id="svbSpecLabel">Frame Load Capacity</span>
+              <span class="svb-spec-value" id="svbSpecValue">1,200 LB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Variant C: Reference-Style Orbital 3D Interactive Showroom (WebGL Three.js) -->
+        <div class="system-variant-c system-variant-panel is-active" data-panel="variant-c">
+          <!-- Top Brand Series Bar -->
+          <div class="svc-series-bar" role="tablist" aria-label="P16 Series">
+            <button type="button" class="svc-series-tab is-active" data-series="pro" role="tab" aria-selected="true">P16 Pro Series</button>
+            <button type="button" class="svc-series-tab" data-series="standard" role="tab" aria-selected="false">P16 Standard</button>
+            <button type="button" class="svc-series-tab" data-series="accessories" role="tab" aria-selected="false">Pro Accessories</button>
+          </div>
+
+          <div class="svc-shell">
+            <!-- Centered Editorial Header & 3-Column Value Props -->
+            <div class="svc-hero-head">
+              <h3 class="svc-hero-title">Engineered to Outperform.</h3>
+              <p class="svc-hero-sub" id="svcHeroSub">Precision-built 11-gauge steel, crate-shipped, and now <span class="svc-accent">$300 OFF</span> launch offer.</p>
+
+              <div class="svc-value-strip">
+                <div class="svc-value-item is-accent">
+                  <svg class="svc-value-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 17v4M9 13v8M15 9v12M21 5v16" opacity="0.45"/>
+                    <path d="M3 7l6 5 4-3 8 7"/>
+                    <path d="M17 16h4v-4"/>
+                  </svg>
+                  <span class="svc-value-text">Lowest Price<br />of the Year</span>
+                </div>
+                <div class="svc-value-item">
+                  <svg class="svc-value-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                    <circle cx="12" cy="12" r="2.5"/>
+                    <path d="M6 12h.01M18 12h.01"/>
+                  </svg>
+                  <span class="svc-value-text">$300 OFF Launch<br />Early-Bird Deal</span>
+                </div>
+                <div class="svc-value-item">
+                  <svg class="svc-value-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+                    <path d="m3.3 7 8.7 5 8.7-5M12 22V12"/>
+                  </svg>
+                  <span class="svc-value-text">In Stock. Crate<br />Shipped Direct.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Centerpiece 3D Orbital Stage -->
+            <div class="svc-stage" id="p16ThreeStage">
+              <canvas class="svc-canvas" id="p16ThreeCanvas" aria-label="Interactive 3D MERACH P16 Strength System"></canvas>
+
+              <!-- Subtle Top-Right 3D Tools -->
+              <div class="svc-top-right">
+                <button type="button" class="svc-tool-btn is-active" id="svcAutoRotateBtn" aria-pressed="true">360° Spin</button>
+                <button type="button" class="svc-tool-btn" id="svcXrayBtn" aria-pressed="false">X-Ray</button>
+              </div>
+
+              <!-- Floating Machine Component Hotspot -->
+              <span class="svc-machine-hotspot" id="svcMachineHotspot" aria-hidden="true"></span>
+
+              <!-- Left / Right Orbital Step Arrows -->
+              <button type="button" class="svc-orbit-arrow svc-orbit-prev" id="svcOrbitPrev" aria-label="Previous angle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="svc-orbit-arrow svc-orbit-next" id="svcOrbitNext" aria-label="Next angle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+
+              <!-- Elliptical Orbit Track & 4 Interactive Orbital Nodes -->
+              <div class="svc-orbit-track" aria-label="3D Orbital Viewpoints" role="tablist">
+                <svg class="svc-orbit-ring-svg" viewBox="0 0 600 130" preserveAspectRatio="none" aria-hidden="true">
+                  <ellipse cx="300" cy="65" rx="286" ry="54" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.35" />
+                </svg>
+                <button type="button" class="svc-orbit-dot svc-dot-front is-active" data-cam="overview" role="tab" aria-selected="true" aria-label="Unlock More Power — 1:1 & 2:1 Ratios"></button>
+                <button type="button" class="svc-orbit-dot svc-dot-left" data-cam="safety" role="tab" aria-selected="false" aria-label="Rock-Solid Safety — 11-Gauge Steel"></button>
+                <button type="button" class="svc-orbit-dot svc-dot-right" data-cam="biomechanics" role="tab" aria-selected="false" aria-label="Natural Biomechanics — Dual 180° Towers"></button>
+                <button type="button" class="svc-orbit-dot svc-dot-back" data-cam="fluidity" role="tab" aria-selected="false" aria-label="CNC Pulley Fluidity — Whisper-Quiet Glide"></button>
+              </div>
+            </div>
+
+            <!-- Centered Bottom Feature Copy (Reference Style) -->
+            <div class="svc-bottom-copy">
+              <h4 class="svc-hud-title" id="svcHudTitle">Unlock More Power</h4>
+              <p class="svc-hud-desc" id="svcHudDesc"><strong>Switch Ratios</strong> seamlessly between <strong>1:1 &amp; 2:1 Modes</strong> for versatile home training control.</p>
+              <div class="svc-bottom-meta">
+                <span class="svc-model-caption" id="svcModelCaption">MERACH P16 Pro Series All-In-One Rack</span>
+                <span class="svc-angle-readout" id="svcAngleReadout">0°</span>
               </div>
             </div>
           </div>
@@ -428,14 +664,14 @@
           <article class="moment-card" data-space="garage">
             <div class="moment-media">
               <div class="moment-img-wrap moment-img-1">
-                <img src="./assets/moment-1.png" alt="Morning Wake-up" class="moment-img" />
+                <img src="./assets/moment-garage-1.jpg" alt="Morning Wake-up in Garage Gym" class="moment-img" />
               </div>
               <div class="moment-mobile-grad" aria-hidden="true"></div>
             </div>
             <div class="moment-body">
               <div class="moment-text">
                 <h3 class="moment-title">Morning Wake-up</h3>
-                <p class="moment-desc">Ease into the day with a little movement.</p>
+                <p class="moment-desc">Kickstart the day with a full-body rowing session in your garage studio.</p>
               </div>
               <a href="#guidance" class="btn-pill btn-dark moment-cta">
                 <span class="label-desktop">Learn More</span>
@@ -448,20 +684,14 @@
           <article class="moment-card" data-space="garage">
             <div class="moment-media">
               <div class="moment-img-wrap moment-img-2">
-                <picture>
-                  <source media="(max-width: 767px)" srcset="./assets/moment-1.png" />
-                  <img src="./assets/moment-2.png" alt="After-work Reset" class="moment-img" />
-                </picture>
+                <img src="./assets/moment-garage-2.jpg" alt="After-work Reset in Garage Gym" class="moment-img" />
               </div>
               <div class="moment-mobile-grad" aria-hidden="true"></div>
             </div>
             <div class="moment-body">
               <div class="moment-text">
-                <h3 class="moment-title">
-                  <span class="label-desktop">After-work Reset</span>
-                  <span class="label-mobile">Morning Wake-up</span>
-                </h3>
-                <p class="moment-desc">Ease into the day with a little movement.</p>
+                <h3 class="moment-title">After-work Reset</h3>
+                <p class="moment-desc">Shake off the day with high-intensity treadmill intervals on cushioned decks.</p>
               </div>
               <a href="#guidance" class="btn-pill btn-dark moment-cta">
                 <span class="label-desktop">Learn More</span>
@@ -474,14 +704,14 @@
           <article class="moment-card" data-space="garage">
             <div class="moment-media">
               <div class="moment-img-wrap moment-img-2">
-                <img src="./assets/moment-2.png" alt="After-work Reset" class="moment-img" />
+                <img src="./assets/moment-garage-3.jpg" alt="Weekend Strength in Garage Gym" class="moment-img" />
               </div>
               <div class="moment-mobile-grad" aria-hidden="true"></div>
             </div>
             <div class="moment-body">
               <div class="moment-text">
-                <h3 class="moment-title">After-work Reset</h3>
-                <p class="moment-desc">Ease into the day with a little movement.</p>
+                <h3 class="moment-title">Weekend Strength</h3>
+                <p class="moment-desc">Build real power with heavy-duty compound lifts on your home Smith rack.</p>
               </div>
               <a href="#guidance" class="btn-pill btn-dark moment-cta">
                 <span class="label-desktop">Learn More</span>
@@ -537,6 +767,10 @@
           <div class="support-card">
             <img src="./assets/support-lifetime.svg" alt="" width="64" height="64" class="support-icon" />
             <p class="support-label">Lifetime Support</p>
+          </div>
+          <div class="support-card">
+            <img src="./assets/support-app.svg" alt="" width="64" height="64" class="support-icon" />
+            <p class="support-label">Free MERACH App</p>
           </div>
         </div>
       </div>
@@ -1214,6 +1448,7 @@
   <!-- Toast Notification -->
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
-  <script src="./script.js"></script>
+  <script src="./script.js?v=6"></script>
+  <script type="module" src="./p16-3d.js?v=2"></script>
 </body>
 </html>

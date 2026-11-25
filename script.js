@@ -181,7 +181,13 @@
     },
   ];
 
+  const HERO_AUTOPLAY_MS = 6000;
   let currentHeroSlide = 0;
+  let heroElapsedMs = 0;
+  let heroLastTick = 0;
+  let heroRafId = null;
+  let heroSwapTimer = null;
+
   const heroTitleEl = document.getElementById("heroTitle");
   const heroSubtitleEl = document.getElementById("heroSubtitle");
   const heroBgMedia = document.getElementById("heroBgMedia");
@@ -190,29 +196,65 @@
   const heroContent = document.getElementById("heroSlideContent");
   const heroIndicatorBtns = Array.from(document.querySelectorAll("#heroIndicators .hero-indicator"));
 
-  function setHeroSlide(index) {
+  function resetHeroIndicators(activeIdx) {
+    heroIndicatorBtns.forEach((btn, i) => {
+      const fill = btn.querySelector(".hero-indicator-fill");
+      const active = i === activeIdx;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-selected", String(active));
+      if (fill) {
+        fill.style.width = "0%";
+      }
+    });
+  }
+
+  function setHeroSlide(index, instant = false) {
     const count = window.innerWidth <= 767 ? 5 : heroSlides.length;
     currentHeroSlide = ((index % count) + count) % count;
     const slide = heroSlides[currentHeroSlide];
 
-    if (heroContent) heroContent.style.opacity = "0";
-    setTimeout(() => {
+    heroElapsedMs = 0;
+    heroLastTick = performance.now();
+    resetHeroIndicators(currentHeroSlide);
+
+    clearTimeout(heroSwapTimer);
+    if (instant) {
       if (heroTitleEl) heroTitleEl.textContent = slide.title;
       if (heroSubtitleEl) heroSubtitleEl.textContent = slide.subtitle;
       if (heroBgImg) heroBgImg.src = slide.bgPc;
       if (heroSourceMobile) heroSourceMobile.srcset = slide.bgMobile;
       if (heroContent) heroContent.style.opacity = "1";
-    }, 140);
+    } else {
+      if (heroContent) heroContent.style.opacity = "0";
+      heroSwapTimer = setTimeout(() => {
+        if (heroTitleEl) heroTitleEl.textContent = slide.title;
+        if (heroSubtitleEl) heroSubtitleEl.textContent = slide.subtitle;
+        if (heroBgImg) heroBgImg.src = slide.bgPc;
+        if (heroSourceMobile) heroSourceMobile.srcset = slide.bgMobile;
+        if (heroContent) heroContent.style.opacity = "1";
+      }, 140);
+    }
+  }
 
-    heroIndicatorBtns.forEach((btn, i) => {
-      const fill = btn.querySelector(".hero-indicator-fill");
-      const active = i === currentHeroSlide;
-      btn.classList.toggle("is-active", active);
-      btn.setAttribute("aria-selected", String(active));
-      if (fill) {
-        fill.style.width = active ? slide.progress : "0%";
+  function tickHeroAutoplay(now) {
+    if (!heroLastTick) heroLastTick = now;
+    const dt = now - heroLastTick;
+    heroLastTick = now;
+
+    if (!document.hidden && heroIndicatorBtns.length) {
+      heroElapsedMs += Math.min(dt, 100);
+      const pct = Math.min((heroElapsedMs / HERO_AUTOPLAY_MS) * 100, 100);
+      const activeBtn = heroIndicatorBtns[currentHeroSlide];
+      const activeFill = activeBtn ? activeBtn.querySelector(".hero-indicator-fill") : null;
+      if (activeFill) {
+        activeFill.style.width = `${pct.toFixed(2)}%`;
       }
-    });
+      if (heroElapsedMs >= HERO_AUTOPLAY_MS) {
+        setHeroSlide(currentHeroSlide + 1);
+      }
+    }
+
+    heroRafId = requestAnimationFrame(tickHeroAutoplay);
   }
 
   const heroPrevBtn = document.getElementById("heroPrevBtn");
@@ -226,6 +268,12 @@
       setHeroSlide(idx);
     });
   });
+
+  if (heroIndicatorBtns.length) {
+    resetHeroIndicators(0);
+    heroLastTick = performance.now();
+    heroRafId = requestAnimationFrame(tickHeroAutoplay);
+  }
 
   /* ------------------------------------------------------------------------
      4. Tab Switchers (Animated Underline + Filtering)
@@ -275,19 +323,55 @@
 
   const momentsBySpace = {
     garage: [
-      { title: "Morning Wake-up", desc: "Ease into the day with a little movement." },
-      { title: "After-work Reset", desc: "Ease into the day with a little movement." },
-      { title: "After-work Reset", desc: "Ease into the day with a little movement." },
+      {
+        title: "Morning Wake-up",
+        desc: "Kickstart the day with a full-body rowing session in your garage studio.",
+        img: "./assets/moment-garage-1.jpg",
+      },
+      {
+        title: "After-work Reset",
+        desc: "Shake off the day with high-intensity treadmill intervals on cushioned decks.",
+        img: "./assets/moment-garage-2.jpg",
+      },
+      {
+        title: "Weekend Strength",
+        desc: "Build real power with heavy-duty compound lifts on your home Smith rack.",
+        img: "./assets/moment-garage-3.jpg",
+      },
     ],
     bedroom: [
-      { title: "Quiet Morning Walk", desc: "Whisper-quiet under-desk stride before your first meeting." },
-      { title: "Evening Wind-Down", desc: "Low-impact cardio that clears the mind without disturbing the home." },
-      { title: "Compact Stowaway", desc: "Slide smoothly beneath the bed frame in seconds." },
+      {
+        title: "Quiet Morning Walk",
+        desc: "Whisper-quiet under-desk stride before your first meeting.",
+        img: "./assets/moment-bedroom-1.jpg",
+      },
+      {
+        title: "Evening Wind-Down",
+        desc: "Low-impact cycling that clears the mind without disturbing the home.",
+        img: "./assets/moment-bedroom-2.jpg",
+      },
+      {
+        title: "Active Recovery",
+        desc: "Loosen tight muscles with gentle vibration recovery before sleep.",
+        img: "./assets/moment-bedroom-3.jpg",
+      },
     ],
     "living-room": [
-      { title: "Living Room Studio", desc: "Furniture-grade wood and sleek matte steel crafted for modern interiors." },
-      { title: "Family Challenge", desc: "Sync live leaderboards to your TV through the MERACH App." },
-      { title: "Weekend Endurance", desc: "Scenic interactive routes from the comfort of your sofa view." },
+      {
+        title: "Living Room Studio",
+        desc: "Furniture-grade wood and sleek matte steel crafted for modern interiors.",
+        img: "./assets/cat-lifestyle-rowers.jpg",
+      },
+      {
+        title: "Family Challenge",
+        desc: "Sync live leaderboards to your TV through the MERACH App.",
+        img: "./assets/cat-lifestyle-bikes.jpg",
+      },
+      {
+        title: "Weekend Endurance",
+        desc: "Scenic interactive routes from the comfort of your sofa view.",
+        img: "./assets/cat-lifestyle-walkingpad.jpg",
+      },
     ],
   };
 
@@ -296,10 +380,16 @@
     const cards = document.querySelectorAll("#momentsTrack .moment-card");
     cards.forEach((card, i) => {
       if (!data[i]) return;
-      const titleDesktop = card.querySelector(".moment-title .label-desktop") || card.querySelector(".moment-title");
+      card.setAttribute("data-space", space);
+      const titleEl = card.querySelector(".moment-title");
       const desc = card.querySelector(".moment-desc");
-      if (titleDesktop) titleDesktop.textContent = data[i].title;
+      const img = card.querySelector(".moment-img");
+      if (titleEl) titleEl.textContent = data[i].title;
       if (desc) desc.textContent = data[i].desc;
+      if (img && data[i].img) {
+        img.src = data[i].img;
+        img.alt = data[i].title;
+      }
     });
   }
 
@@ -422,6 +512,104 @@
       if (mobileFeatureDetail) mobileFeatureDetail.hidden = false;
     });
   });
+
+  // Showcase Variant Switcher (Variant A / Variant B / Original)
+  const showcaseSection = document.getElementById("system-showcase");
+  if (showcaseSection) {
+    const variantBtns = Array.from(showcaseSection.querySelectorAll(".variant-chip"));
+    const variantPanels = Array.from(showcaseSection.querySelectorAll(".system-variant-panel"));
+
+    variantBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = btn.dataset.variant;
+        showcaseSection.setAttribute("data-showcase-variant", target);
+        variantBtns.forEach((b) => {
+          const active = b === btn;
+          b.classList.toggle("is-active", active);
+          b.setAttribute("aria-selected", String(active));
+        });
+        variantPanels.forEach((panel) => {
+          panel.classList.toggle("is-active", panel.dataset.panel === target);
+        });
+      });
+    });
+
+    // Variant A: Interactive Hardware Hotspots + Bottom Spec Dock
+    const svaData = [
+      {
+        index: "01 / 03",
+        metric: "1,200 LB Load",
+        title: "Rock-Solid Safety",
+        desc: "Heavy-duty 11-gauge commercial steel frame engineered as a permanent foundation for home strength training.",
+        transform: "scale(1.03) translate(-1.5%, 0%)",
+      },
+      {
+        index: "02 / 03",
+        metric: "180° Dual Arc",
+        title: "Natural Biomechanics",
+        desc: "Dual independent swivel arms follow your natural joint path for safer, deeper muscle activation across 100+ exercises.",
+        transform: "scale(1.06) translate(1.5%, -1%)",
+      },
+      {
+        index: "03 / 03",
+        metric: "<42 dB Glide",
+        title: "Gym-Grade Fluidity",
+        desc: "Precision-machined CNC aluminum pulleys and sealed bearings deliver whisper-quiet, frictionless travel on every rep.",
+        transform: "scale(1.08) translate(-2.5%, 3.5%)",
+      },
+    ];
+
+    const svaSpots = Array.from(showcaseSection.querySelectorAll(".sva-hotspot"));
+    const svaTabs = Array.from(showcaseSection.querySelectorAll(".sva-tab"));
+    const svaBgWrap = document.getElementById("svaBgWrap");
+    const svaCalloutIndex = document.getElementById("svaCalloutIndex");
+    const svaCalloutMetric = document.getElementById("svaCalloutMetric");
+    const svaCalloutTitle = document.getElementById("svaCalloutTitle");
+    const svaCalloutDesc = document.getElementById("svaCalloutDesc");
+
+    function setVariantASpot(idx) {
+      const item = svaData[idx] || svaData[0];
+      svaSpots.forEach((el, i) => el.classList.toggle("is-active", i === idx));
+      svaTabs.forEach((el, i) => {
+        el.classList.toggle("is-active", i === idx);
+        el.setAttribute("aria-selected", String(i === idx));
+      });
+      if (svaCalloutIndex) svaCalloutIndex.textContent = item.index;
+      if (svaCalloutMetric) svaCalloutMetric.textContent = item.metric;
+      if (svaCalloutTitle) svaCalloutTitle.textContent = item.title;
+      if (svaCalloutDesc) svaCalloutDesc.textContent = item.desc;
+      if (svaBgWrap) svaBgWrap.style.transform = item.transform;
+    }
+
+    svaSpots.forEach((btn) => btn.addEventListener("click", () => setVariantASpot(Number(btn.dataset.spot || 0))));
+    svaTabs.forEach((btn) => btn.addEventListener("click", () => setVariantASpot(Number(btn.dataset.spot || 0))));
+    setVariantASpot(0);
+
+    // Variant B: Split Dark Engineering Showcase
+    const svbData = [
+      { label: "Frame Load Capacity", value: "1,200 LB", transform: "scale(1.02) translate(0, 0)" },
+      { label: "Cable Articulation", value: "180° Dual Arc", transform: "scale(1.07) translate(3%, -2%)" },
+      { label: "Pulley Acoustic Rating", value: "<42 dB Whisper", transform: "scale(1.1) translate(-4%, 4%)" },
+    ];
+
+    const svbItems = Array.from(showcaseSection.querySelectorAll(".svb-item"));
+    const svbMediaWrap = document.getElementById("svbMediaWrap");
+    const svbSpecLabel = document.getElementById("svbSpecLabel");
+    const svbSpecValue = document.getElementById("svbSpecValue");
+
+    function setVariantBStep(idx) {
+      const item = svbData[idx] || svbData[0];
+      svbItems.forEach((el, i) => {
+        el.classList.toggle("is-active", i === idx);
+        el.setAttribute("aria-selected", String(i === idx));
+      });
+      if (svbSpecLabel) svbSpecLabel.textContent = item.label;
+      if (svbSpecValue) svbSpecValue.textContent = item.value;
+      if (svbMediaWrap) svbMediaWrap.style.transform = item.transform;
+    }
+
+    svbItems.forEach((btn) => btn.addEventListener("click", () => setVariantBStep(Number(btn.dataset.step || 0))));
+  }
 
   /* ------------------------------------------------------------------------
      6. Horizontal Carousels with Progress & Arrows (Sections 05 & 11)
