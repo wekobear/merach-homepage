@@ -2555,8 +2555,20 @@ ul {
 .reviews-viewport {
   width: 100%;
   display: flex;
-  justify-content: center;
-  overflow-x: clip;
+  justify-content: flex-start;
+  overflow-x: auto;
+  scrollbar-width: none;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+}
+
+.reviews-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews-viewport.is-dragging {
+  cursor: grabbing;
+  user-select: none;
 }
 
 .reviews-track {
@@ -2564,7 +2576,7 @@ ul {
   align-items: center;
   gap: var(--grid-gap);
   width: max-content;
-  transition: transform var(--transition-med);
+  padding-inline: var(--container-pad);
 }
 
 .review-card {

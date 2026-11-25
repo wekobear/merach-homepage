@@ -414,9 +414,10 @@
         } else if (group === "moments") {
           renderMomentsTab(tabVal);
         } else if (group === "reviews") {
-          const track = document.getElementById("reviewsTrack");
-          if (track) {
-            track.style.transform = tabVal === "consumers" ? "translateX(-120px)" : "translateX(0)";
+          const vp = document.getElementById("reviewsViewport");
+          if (vp) {
+            const targetScroll = tabVal === "consumers" ? Math.min(480, vp.scrollWidth / 4) : 0;
+            vp.scrollTo({ left: targetScroll, behavior: "smooth" });
           }
         } else if (group === "guidance") {
           const cards = document.querySelectorAll("#guidanceTrack .blog-card");
@@ -714,5 +715,95 @@
     localeBtn.addEventListener("click", () => {
       showToast("Current region: United States (English)");
     });
+  }
+  /* ------------------------------------------------------------------------
+     9. Reviews Seamless Horizontal Auto-Scroll + Drag / Swipe
+     ------------------------------------------------------------------------ */
+  const reviewsViewport = document.getElementById("reviewsViewport");
+  const reviewsTrack = document.getElementById("reviewsTrack");
+
+  if (reviewsViewport && reviewsTrack) {
+    // Clone cards once for seamless infinite horizontal loop
+    const originalCards = Array.from(reviewsTrack.children);
+    originalCards.forEach((card) => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      reviewsTrack.appendChild(clone);
+    });
+
+    // Event delegation so cloned Play buttons also open the review modal
+    reviewsTrack.addEventListener("click", (e) => {
+      const btn = e.target.closest(".play-btn");
+      if (!btn || reviewsViewport.dataset.justDragged === "1") return;
+      const reviewer = btn.dataset.playReviewer || "MERACH Member";
+      const quote = btn.dataset.playQuote || "Real story from the MERACH community.";
+      if (infoModalTitle) infoModalTitle.textContent = `${reviewer} — Verified Review`;
+      if (infoModalBody) infoModalBody.textContent = `“${quote}”`;
+      openModal(infoModal);
+    });
+
+    let isPaused = false;
+    let isDragging = false;
+    let dragMoved = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let subPixel = 0;
+
+    reviewsViewport.addEventListener("mouseenter", () => { isPaused = true; });
+    reviewsViewport.addEventListener("mouseleave", () => {
+      isPaused = false;
+      isDragging = false;
+      reviewsViewport.classList.remove("is-dragging");
+    });
+
+    reviewsViewport.addEventListener("pointerdown", (e) => {
+      if (e.target.closest(".play-btn")) return;
+      isDragging = true;
+      dragMoved = false;
+      startX = e.clientX;
+      startScrollLeft = reviewsViewport.scrollLeft;
+      reviewsViewport.classList.add("is-dragging");
+    });
+
+    window.addEventListener("pointermove", (e) => {
+      if (!isDragging) return;
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 4) dragMoved = true;
+      reviewsViewport.scrollLeft = startScrollLeft - dx;
+    });
+
+    window.addEventListener("pointerup", () => {
+      if (!isDragging) return;
+      isDragging = false;
+      reviewsViewport.classList.remove("is-dragging");
+      if (dragMoved) {
+        reviewsViewport.dataset.justDragged = "1";
+        setTimeout(() => { reviewsViewport.dataset.justDragged = "0"; }, 80);
+      }
+    });
+
+    reviewsViewport.addEventListener("touchstart", () => { isPaused = true; }, { passive: true });
+    reviewsViewport.addEventListener("touchend", () => {
+      setTimeout(() => { isPaused = false; }, 1600);
+    }, { passive: true });
+
+    function tickReviewsScroll() {
+      if (!isPaused && !isDragging && !document.hidden) {
+        const halfWidth = reviewsTrack.scrollWidth / 2;
+        if (halfWidth > 0) {
+          subPixel += 0.65;
+          if (subPixel >= 1) {
+            const step = Math.floor(subPixel);
+            subPixel -= step;
+            reviewsViewport.scrollLeft += step;
+            if (reviewsViewport.scrollLeft >= halfWidth) {
+              reviewsViewport.scrollLeft -= halfWidth;
+            }
+          }
+        }
+      }
+      requestAnimationFrame(tickReviewsScroll);
+    }
+    requestAnimationFrame(tickReviewsScroll);
   }
 })();
