@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MERACH 2.0 — Next-Gen Smart Home Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./v2.css?v=1" />
+</head>
+<body>
+  <!-- ==================== FLOATING GLASS PILL HEADER ==================== -->
+  <header class="v2-header" id="v2Header">
+    <div class="v2-header-inner">
+      <a href="#top" class="v2-brand" aria-label="MERACH Home">
+        <img src="./assets/logo.svg" alt="MERACH" width="106" height="22" class="v2-logo" />
+        <span class="v2-brand-badge">AI Connected</span>
+      </a>
+
+      <nav class="v2-pill-nav" aria-label="Primary Navigation">
+        <a href="#orbit-ecosystem" class="v2-pill-link">Ecosystem</a>
+        <a href="#scale-proof" class="v2-pill-link">Scale</a>
+        <a href="#studio-3d" class="v2-pill-link">P16 3D Studio</a>
+        <a href="#bento-moments" class="v2-pill-link">Moments</a>
+        <a href="#v2-reviews" class="v2-pill-link">Reviews</a>
+        <a href="./index.html" class="v2-pill-link v2-pill-compare">v1 Classic ↗</a>
+      </nav>
+
+      <div class="v2-header-right">
+        <a href="#studio-3d" class="v2-cta-dark">Explore P16</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ==================== 01. KINETIC SLOT-MACHINE HERO ==================== -->
+    <section class="v2-hero" aria-label="Hero">
+      <div class="v2-hero-aura" aria-hidden="true"></div>
+
+      <div class="v2-hero-center">
+        <p class="v2-eyebrow">MERACH SMART HOME FITNESS · 2026 FLAGSHIP</p>
+
+        <h1 class="v2-kinetic-headline">
+          <span class="v2-headline-static">Home Fitness Built For</span>
+          <button type="button" class="v2-slot-machine" id="v2SlotBtn" aria-label="Switch fitness mode">
+            <span class="v2-slot-ghost v2-slot-ghost-top" id="v2SlotPrev">Active Recovery</span>
+            <span class="v2-slot-pill" id="v2SlotActive">
+              <span class="v2-slot-icon" id="v2SlotIcon">⚡</span>
+              <span class="v2-slot-label" id="v2SlotLabel">Fat Burn HIIT</span>
+            </span>
+            <span class="v2-slot-ghost v2-slot-ghost-bottom" id="v2SlotNext">Full-Body Strength</span>
+          </button>
+          <span class="v2-headline-static">Every Single Day</span>
+        </h1>
+
+        <p class="v2-hero-sub" id="v2HeroSub">
+          Whisper-quiet hardware, commercial 11-gauge steel, and real-time MERACH App auto-resistance—engineered to fit your home and move at your pace.
+        </p>
+
+        <div class="v2-hero-actions">
+          <a href="#studio-3d" class="v2-btn v2-btn-primary">Launch 3D Studio ›</a>
+          <a href="#orbit-ecosystem" class="v2-btn v2-btn-outline">Explore Ecosystem</a>
+          <a href="./index.html" class="v2-btn v2-btn-ghost">Compare v1</a>
+        </div>
+
+        <!-- Alipay-inspired Interactive Smart Finder Capsule -->
+        <div class="v2-command-bar" id="v2CommandBar">
+          <span class="v2-cmd-badge">
+            <span class="v2-cmd-dot"></span>
+            MERACH AI Match
+          </span>
+          <span class="v2-cmd-text" id="v2CmdText">goal: fat-burn · space: bedroom · noise: &lt;42dB → UltraWalk W60 Plus</span>
+          <button type="button" class="v2-cmd-cycle" id="v2CmdCycleBtn" title="Next smart recommendation" aria-label="Next smart recommendation">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Subtle floating hero preview strip -->
+      <div class="v2-hero-cards-peek">
+        <div class="v2-peek-card">
+          <img src="./assets/cat-lifestyle-walkingpad.jpg" alt="Walking Pad" />
+          <div class="v2-peek-meta">
+            <span class="v2-peek-tag">UltraWalk W60 Plus</span>
+            <span class="v2-peek-stat">&lt;40 dB Whisper Deck</span>
+          </div>
+        </div>
+        <div class="v2-peek-card is-featured">
+          <img src="./assets/moment-garage-3.jpg" alt="MERACH P16 Smith Rack" />
+          <div class="v2-peek-meta">
+            <span class="v2-peek-tag">MERACH P16 Pro</span>
+            <span class="v2-peek-stat">1,200 LB · 1:1 &amp; 2:1 Cable</span>
+          </div>
+        </div>
+        <div class="v2-peek-card">
+          <img src="./assets/cat-lifestyle-rowers.jpg" alt="Water Rower" />
+          <div class="v2-peek-meta">
+            <span class="v2-peek-tag">NovaRow 950</span>
+            <span class="v2-peek-stat">86% Muscle Activation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02. 360° ORBITAL ECOSYSTEM RING ==================== -->
+    <section class="v2-orbit-section" id="orbit-ecosystem" aria-labelledby="v2OrbitHeading">
+      <div class="v2-orbit-container">
+        <div class="v2-orbit-ring-stage" id="v2OrbitStage">
+          <!-- Subtle concentric guide rings -->
+          <div class="v2-ring-guide v2-ring-guide-outer" aria-hidden="true"></div>
+          <div class="v2-ring-guide v2-ring-guide-inner" aria-hidden="true"></div>
+
+          <!-- Center Live Manifesto + Preview -->
+          <div class="v2-orbit-center">
+            <span class="v2-orbit-kicker" id="v2OrbitKicker">CONNECTED HOME ECOSYSTEM</span>
+            <h2 class="v2-orbit-title" id="v2OrbitHeading">8 Smart Categories.<br />One Seamless Routine.</h2>
+            <p class="v2-orbit-desc" id="v2OrbitDesc">Hover or tap any orbiting device to inspect how MERACH adapts to every room and training goal.</p>
+            <div class="v2-orbit-preview" id="v2OrbitPreview">
+              <img src="./assets/cat-lifestyle-treadmills.jpg" alt="Treadmills" id="v2OrbitImg" />
+              <div class="v2-orbit-preview-info">
+                <strong id="v2OrbitName">Treadmills</strong>
+                <span id="v2OrbitSpec">Cushioned Deck · Auto-Incline</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8 Orbiting Equipment & Ecosystem Nodes -->
+          <div class="v2-orbit-wheel" id="v2OrbitWheel">
+            <button type="button" class="v2-orbit-node is-active" data-idx="0" style="--angle: 0deg;">
+              <span class="v2-node-icon"><img src="./assets/cat-treadmills.png" alt="" /></span>
+              <span class="v2-node-label">Treadmills</span>
+            </button>
+            <button type="button" class="v2-orbit-node" data-idx="1" style="--angle: 45deg;">
+              <span class="v2-node-icon"><img src="./assets/cat-walkingpad.png" alt="" /></span>
+              <span class="v2-node-label">Walking Pad</span>
+            </button>
+            <button type="button" class="v2-orbit-node" data-idx="2" style="--angle: 90deg;">
+              <span class="v2-node-icon"><img src="./assets/cat-rowers.png" alt="" /></span>
+              <span class="v2-node-label">Water Rowers</span>
+            </button>
+            <button type="button" class="v2-orbit-node" data-idx="3" style="--angle: 135deg;">
+              <span class="v2-node-icon"><img src="./assets/cat-bikes.png" alt="" /></span>
+              <span class="v2-node-label">Spin Bikes</span>
+            </button>
+            <button type="button" class="v2-orbit-node" data-idx="4" style="--angle: 180deg;">
+              <span class="v2-node-icon"><img src="./assets/cat-essential.png" alt="" /></span>
+              <span class="v2-node-label">Recovery</span>
+            </button>
+            <button type="button" class="v2-orbit-node" data-idx="5" style="--angle: 225deg;">
+              <span class="v2-node-icon v2-node-svg"><img src="./assets/support-app.svg" alt="" /></span>
+              <span class="v2-node-label">MERACH App</span>
+            </button>
+            <button type="button" class="v2-orbit-node" data-idx="6" style="--angle: 270deg;">
+              <span class="v2-node-icon v2-node-svg"><img src="./assets/support-warranty.svg" alt="" /></span>
+              <span class="v2-node-label">P16 Rack</span>
+            </button>
+            <button type="button" class="v2-orbit-node" data-idx="7" style="--angle: 315deg;">
+              <span class="v2-node-icon v2-node-svg"><img src="./assets/support-hsa.svg" alt="" /></span>
+              <span class="v2-node-label">HSA / FSA</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03. SCROLL-PINNED GIANT COUNTER NARRATIVE ==================== -->
+    <section class="v2-scale-section" id="scale-proof" aria-label="Scale and Engineering Proof">
+      <div class="v2-scale-sticky">
+        <div class="v2-scale-aura" aria-hidden="true"></div>
+        <div class="v2-scale-inner">
+          <p class="v2-scale-eyebrow">PROVEN AT GLOBAL SCALE</p>
+          <h2 class="v2-scale-title">Built For Real Homes.<br />Verified By Millions Of Reps.</h2>
+          <p class="v2-scale-caption" id="v2ScaleMetricLabel">Global Home Workouts Synced</p>
+
+          <div class="v2-giant-number-row">
+            <span class="v2-giant-badge" id="v2ScaleBadge">M</span>
+            <div class="v2-giant-number" id="v2GiantNumber">2,400,000+</div>
+          </div>
+
+          <p class="v2-scale-sub" id="v2ScaleSub">
+            Not a concept render. Real smart cardio &amp; strength systems running daily across North America, Europe, and Asia.
+          </p>
+
+          <!-- Milestone Switcher Pills -->
+          <div class="v2-scale-pills" role="tablist" aria-label="Scale Milestones">
+            <button type="button" class="v2-scale-pill is-active" data-milestone="0" role="tab" aria-selected="true">2.4M+ Workouts</button>
+            <button type="button" class="v2-scale-pill" data-milestone="1" role="tab" aria-selected="false">1,200 LB Steel</button>
+            <button type="button" class="v2-scale-pill" data-milestone="2" role="tab" aria-selected="false">&lt;42 dB Quiet</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04. DARK STUDIO 3D ORBITAL P16 SHOWCASE ==================== -->
+    <section class="v2-studio-section" id="studio-3d" aria-label="P16 3D Interactive Studio">
+      <div class="v2-studio-wrap">
+        <div class="svc-series-bar" role="tablist" aria-label="P16 Series">
+          <button type="button" class="svc-series-tab is-active" data-series="pro" role="tab" aria-selected="true">P16 Pro Series</button>
+          <button type="button" class="svc-series-tab" data-series="standard" role="tab" aria-selected="false">P16 Standard</button>
+          <button type="button" class="svc-series-tab" data-series="accessories" role="tab" aria-selected="false">Pro Accessories</button>
+        </div>
+
+        <div class="svc-shell">
+          <div class="svc-hero-head">
+            <h2 class="svc-hero-title">Engineered to Outperform.</h2>
+            <p class="svc-hero-sub" id="svcHeroSub">Precision-built 11-gauge steel, crate-shipped, and now <span class="svc-accent">$300 OFF</span> launch offer.</p>
+
+            <div class="svc-value-strip">
+              <div class="svc-value-item is-accent">
+                <svg class="svc-value-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17v4M9 13v8M15 9v12M21 5v16" opacity="0.45"/><path d="M3 7l6 5 4-3 8 7"/><path d="M17 16h4v-4"/></svg>
+                <span class="svc-value-text">Lowest Price<br />of the Year</span>
+              </div>
+              <div class="svc-value-item">
+                <svg class="svc-value-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+                <span class="svc-value-text">$300 OFF Launch<br />Early-Bird Deal</span>
+              </div>
+              <div class="svc-value-item">
+                <svg class="svc-value-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>
+                <span class="svc-value-text">In Stock. Crate<br />Shipped Direct.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="svc-stage" id="p16ThreeStage">
+            <canvas class="svc-canvas" id="p16ThreeCanvas" aria-label="Interactive 3D MERACH P16 Strength System"></canvas>
+
+            <div class="svc-top-right">
+              <button type="button" class="svc-tool-btn is-active" id="svcAutoRotateBtn" aria-pressed="true">360° Spin</button>
+              <button type="button" class="svc-tool-btn" id="svcXrayBtn" aria-pressed="false">X-Ray</button>
+            </div>
+
+            <span class="svc-machine-hotspot" id="svcMachineHotspot" aria-hidden="true"></span>
+
+            <button type="button" class="svc-orbit-arrow svc-orbit-prev" id="svcOrbitPrev" aria-label="Previous angle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button type="button" class="svc-orbit-arrow svc-orbit-next" id="svcOrbitNext" aria-label="Next angle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+
+            <div class="svc-orbit-track" aria-label="3D Orbital Viewpoints" role="tablist">
+              <svg class="svc-orbit-ring-svg" viewBox="0 0 600 130" preserveAspectRatio="none" aria-hidden="true">
+                <ellipse cx="300" cy="65" rx="286" ry="54" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.35" />
+              </svg>
+              <button type="button" class="svc-orbit-dot svc-dot-front is-active" data-cam="overview" role="tab" aria-selected="true" aria-label="Unlock More Power"></button>
+              <button type="button" class="svc-orbit-dot svc-dot-left" data-cam="safety" role="tab" aria-selected="false" aria-label="Rock-Solid Safety"></button>
+              <button type="button" class="svc-orbit-dot svc-dot-right" data-cam="biomechanics" role="tab" aria-selected="false" aria-label="Natural Biomechanics"></button>
+              <button type="button" class="svc-orbit-dot svc-dot-back" data-cam="fluidity" role="tab" aria-selected="false" aria-label="CNC Pulley Fluidity"></button>
+            </div>
+          </div>
+
+          <div class="svc-bottom-copy">
+            <h3 class="svc-hud-title" id="svcHudTitle">Unlock More Power</h3>
+            <p class="svc-hud-desc" id="svcHudDesc"><strong>Switch Ratios</strong> seamlessly between <strong>1:1 &amp; 2:1 Modes</strong> for versatile home training control.</p>
+            <div class="svc-bottom-meta">
+              <span class="svc-model-caption" id="svcModelCaption">MERACH P16 Pro Series All-In-One Rack</span>
+              <span class="svc-angle-readout" id="svcAngleReadout">0°</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05. INTERACTIVE BENTO GRID (MOMENTS + APP + PERKS) ==================== -->
+    <section class="v2-bento-section" id="bento-moments" aria-label="Smart Home Fitness Bento">
+      <div class="v2-container">
+        <div class="v2-section-head">
+          <div>
+            <p class="v2-eyebrow-sm">DESIGNED FOR EVERY SPACE</p>
+            <h2 class="v2-section-title">Equipment For Moments In Your Day</h2>
+          </div>
+          <div class="v2-room-tabs" role="tablist" aria-label="Room selector">
+            <button type="button" class="v2-room-tab is-active" data-room="garage" role="tab" aria-selected="true">Garage</button>
+            <button type="button" class="v2-room-tab" data-room="bedroom" role="tab" aria-selected="false">Bedroom</button>
+            <button type="button" class="v2-room-tab" data-room="living" role="tab" aria-selected="false">Living Room</button>
+          </div>
+        </div>
+
+        <div class="v2-bento-grid">
+          <!-- Bento 1: Hero Room Scene (Spans 7 cols) -->
+          <article class="v2-bento-card v2-bento-large v2-spotlight">
+            <img src="./assets/moment-garage-1.jpg" alt="Morning Wake-up" class="v2-bento-bg" id="v2BentoImg1" />
+            <div class="v2-bento-scrim"></div>
+            <div class="v2-bento-content">
+              <span class="v2-bento-pill" id="v2BentoTag1">Garage · 07:00 AM</span>
+              <h3 class="v2-bento-title" id="v2BentoTitle1">Morning Wake-Up</h3>
+              <p class="v2-bento-desc" id="v2BentoDesc1">Kickstart the day with a full-body rowing session in your sunlit garage studio.</p>
+            </div>
+          </article>
+
+          <!-- Bento 2: Secondary Room Scene (Spans 5 cols) -->
+          <article class="v2-bento-card v2-bento-med v2-spotlight">
+            <img src="./assets/moment-garage-2.jpg" alt="After-work Reset" class="v2-bento-bg" id="v2BentoImg2" />
+            <div class="v2-bento-scrim"></div>
+            <div class="v2-bento-content">
+              <span class="v2-bento-pill" id="v2BentoTag2">Garage · 06:30 PM</span>
+              <h3 class="v2-bento-title" id="v2BentoTitle2">After-Work Reset</h3>
+              <p class="v2-bento-desc" id="v2BentoDesc2">Shake off the day with cushioned treadmill intervals.</p>
+            </div>
+          </article>
+
+          <!-- Bento 3: Live MERACH App Telemetry Card (Spans 5 cols) -->
+          <article class="v2-bento-card v2-bento-dark v2-spotlight">
+            <div class="v2-app-live">
+              <div class="v2-app-top">
+                <span class="v2-live-badge"><span class="v2-live-dot"></span> MERACH App Sync</span>
+                <span class="v2-app-free">FREE</span>
+              </div>
+              <h3 class="v2-bento-title">Auto-Resistance That Thinks With You</h3>
+              <p class="v2-bento-desc">Live cadence, heart-rate zones, and scenic AR routes synced automatically across every MERACH machine.</p>
+              <div class="v2-telemetry-row">
+                <div class="v2-tele-box">
+                  <span class="v2-tele-label">HR ZONE</span>
+                  <strong class="v2-tele-val" id="v2TeleHr">142 bpm</strong>
+                </div>
+                <div class="v2-tele-box">
+                  <span class="v2-tele-label">RESISTANCE</span>
+                  <strong class="v2-tele-val is-cyan">Auto Lv.8</strong>
+                </div>
+                <div class="v2-tele-box">
+                  <span class="v2-tele-label">CALORIES</span>
+                  <strong class="v2-tele-val" id="v2TeleCal">318 kcal</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bento 4: 6-Perk Support Matrix (Spans 7 cols) -->
+          <article class="v2-bento-card v2-bento-light v2-spotlight">
+            <div class="v2-perks-wrap">
+              <div class="v2-perks-head">
+                <h3 class="v2-perks-title">Support That Moves With You</h3>
+                <span class="v2-perks-sub">6 Direct-To-Home Guarantees</span>
+              </div>
+              <div class="v2-perks-grid">
+                <div class="v2-perk-item">
+                  <img src="./assets/support-financing.svg" alt="" width="28" height="28" />
+                  <span>0% APR Financing</span>
+                </div>
+                <div class="v2-perk-item">
+                  <img src="./assets/support-hsa.svg" alt="" width="28" height="28" />
+                  <span>HSA/FSA Eligible</span>
+                </div>
+                <div class="v2-perk-item">
+                  <img src="./assets/support-returns.svg" alt="" width="28" height="28" />
+                  <span>30-Day Returns</span>
+                </div>
+                <div class="v2-perk-item">
+                  <img src="./assets/support-warranty.svg" alt="" width="28" height="28" />
+                  <span>2-Year Warranty</span>
+                </div>
+                <div class="v2-perk-item">
+                  <img src="./assets/support-lifetime.svg" alt="" width="28" height="28" />
+                  <span>Lifetime Support</span>
+                </div>
+                <div class="v2-perk-item is-highlight">
+                  <img src="./assets/support-app.svg" alt="" width="28" height="28" />
+                  <span>Free MERACH App</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 06. REAL-WORLD REVIEWS MARQUEE ==================== -->
+    <section class="v2-reviews-section" id="v2-reviews" aria-label="Voice From Real World">
+      <div class="v2-container">
+        <div class="v2-section-head">
+          <div>
+            <p class="v2-eyebrow-sm">COMMUNITY VOICES</p>
+            <h2 class="v2-section-title">Voice From Real World</h2>
+          </div>
+          <span class="v2-scroll-hint">Hover To Pause · Drag To Explore</span>
+        </div>
+      </div>
+
+      <div class="v2-reviews-viewport" id="v2ReviewsViewport">
+        <div class="v2-reviews-track" id="v2ReviewsTrack">
+          <article class="v2-review-card">
+            <img src="./assets/review-liam-bg.png" alt="Liam Wilson" class="v2-review-bg" />
+            <div class="v2-review-grad"></div>
+            <div class="v2-review-top">
+              <img src="./assets/review-liam-avatar.png" alt="" class="v2-review-avatar" />
+              <div>
+                <strong>Liam Wilson</strong>
+                <div class="v2-stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="v2-review-quote">“With MERACH, staying active fits effortlessly into my home training schedule. No need to rush to the gym.”</p>
+          </article>
+
+          <article class="v2-review-card">
+            <img src="./assets/review-ethan-bg.png" alt="Ethan Carter" class="v2-review-bg" />
+            <div class="v2-review-grad"></div>
+            <div class="v2-review-top">
+              <img src="./assets/review-ethan-avatar.png" alt="" class="v2-review-avatar" />
+              <div>
+                <strong>Ethan Carter</strong>
+                <div class="v2-stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="v2-review-quote">“Staying active feels like a natural part of being at home. Even on busy days, I make time to move.”</p>
+          </article>
+
+          <article class="v2-review-card">
+            <img src="./assets/review-sophia-bg.png" alt="Sophia Harris" class="v2-review-bg" />
+            <div class="v2-review-grad"></div>
+            <div class="v2-review-top">
+              <img src="./assets/review-sophia-avatar.png" alt="" class="v2-review-avatar" />
+              <div>
+                <strong>Sophia Harris</strong>
+                <div class="v2-stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="v2-review-quote">“MERACH makes it easier to keep moving, even on my busiest days. Quick session before work or evening unwind.”</p>
+          </article>
+
+          <article class="v2-review-card">
+            <img src="./assets/review-olivia-bg.png" alt="Olivia Bennett" class="v2-review-bg" />
+            <div class="v2-review-grad"></div>
+            <div class="v2-review-top">
+              <img src="./assets/review-olivia-bg.png" alt="" class="v2-review-avatar" />
+              <div>
+                <strong>Olivia Bennett</strong>
+                <div class="v2-stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="v2-review-quote">“Since bringing MERACH home, exercise has become a regular part of my routine whenever I have free time.”</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== MINIMALIST FOOTER ==================== -->
+  <footer class="v2-footer">
+    <div class="v2-container v2-footer-inner">
+      <div class="v2-footer-left">
+        <img src="./assets/logo.svg" alt="MERACH" width="96" height="20" class="v2-footer-logo" />
+        <p>MERACH 2.0 Kinetic Concept · Branch <code>feat/v2-kinetic-redesign</code></p>
+      </div>
+      <div class="v2-footer-links">
+        <a href="./index.html">View Classic v1</a>
+        <a href="./mobile-preview.html">Mobile Preview</a>
+        <a href="#top">Back To Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./v2.js?v=1"></script>
+  <script type="module" src="./p16-3d.js?v=2"></script>
+</body>
+</html>
